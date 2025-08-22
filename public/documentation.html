@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <style>
+    :root {
+      --create-color: #28a745;
+      --read-color: #3498db;
+      --update-color: #f39c12;
+      --delete-color: #e74c3c;
+      --primary-dark: #2c3e50;
+      --secondary-dark: #34495e;
+      --secondary-blue: #00162c;
+      --primary-blue: #003c77;
+      --light-bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --emerald-dark: #03433e;
+      --emerald-light: #037048;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      text-align: center;
+      padding: 3rem 0;
+      background: linear-gradient(135deg, var(--emerald-dark), var(--emerald-light));
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-tab {
+      padding: 0.75rem 1.5rem;
+      background: var(--card-bg);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 500;
+      transition: transform 0.2s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-tab:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      margin: 77px 0;
+    }
+
+    .api-section {
+      margin-bottom: 3rem;
+    }
+
+    .api-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--primary-dark);
+      padding-left: 1rem;
+      color: var(--primary-dark);
+    }
+
+    .endpoint-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .endpoint-list li {
+      background: var(--card-bg);
+      margin-bottom: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1><i class="fa-solid fa-notes-medical"></i> Military Asset App - API</h1>
+    <div class="container nav-tabs">
+      <a href="#auth" class="nav-tab">Auth APIs</a>
+      <a href="#users" class="nav-tab">User APIs</a>
+      <a href="#bases" class="nav-tab">Bases APIs</a>
+      <a href="#assets" class="nav-tab">Assets APIs</a>
+      <a href="#inventory" class="nav-tab">Inventory APIs</a>
+      <a href="#purchase" class="nav-tab">Purchase APIs</a>
+      <a href="#transfer" class="nav-tab">Transfer APIs</a>
+      <a href="#assignment" class="nav-tab">Assignment APIs</a>
+      <a href="#expenditure" class="nav-tab">Expenditure APIs</a>
+      <a href="#movement" class="nav-tab">Movement Logs</a>
+      <a href="#summary" class="nav-tab">Dashboard Summary</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <section id="auth" class="api-section">
+      <h2>Auth APIs</h2>
+      <ul class="endpoint-list">
+        <li>POST /api/auth/signin</li>
+        <li>POST /api/auth/logout</li>
+      </ul>
+    </section>
+
+    <section id="users" class="api-section">
+      <h2>User APIs</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/auth/get</li>
+        <li>GET /api/auth/get/:id</li>
+        <li>POST /api/auth/create-user</li>
+        <li>PUT /api/auth/update/:id</li>
+        <li>PATCH /api/auth/:id/password</li>
+        <li>DELETE /api/auth/delete/:id</li>
+      </ul>
+    </section>
+
+    <section id="bases" class="api-section">
+      <h2>Bases APIs</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/settings/bases/get</li>
+        <li>GET /api/settings/bases/get/:id</li>
+        <li>POST /api/settings/bases/create</li>
+        <li>PUT /api/settings/bases/update/:id</li>
+        <li>DELETE /api/settings/bases/delete/:id</li>
+      </ul>
+    </section>
+
+    <section id="assets" class="api-section">
+      <h2>Assets APIs</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/settings/assets/get</li>
+        <li>GET /api/settings/assets/get/:id</li>
+        <li>POST /api/settings/assets/create</li>
+        <li>PUT /api/settings/assets/update/:id</li>
+        <li>DELETE /api/settings/assets/delete/:id</li>
+      </ul>
+    </section>
+
+    <section id="inventory" class="api-section">
+      <h2>Inventory APIs</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/stocks/my</li>
+        <li>GET /api/stocks</li>
+      </ul>
+    </section>
+
+    <section id="purchase" class="api-section">
+      <h2>Purchase APIs</h2>
+      <ul class="endpoint-list">
+        <li>POST /api/purchase/create</li>
+        <li>PUT /api/purchase/update/:id</li>
+        <li>DELETE /api/purchase/delete/:id</li>
+        <li>GET /api/purchase/getMy</li>
+        <li>GET /api/purchase/get/:id</li>
+      </ul>
+    </section>
+
+    <section id="transfer" class="api-section">
+      <h2>Transfer APIs</h2>
+      <ul class="endpoint-list">
+        <li>POST /api/transfers/create</li>
+        <li>DELETE /api/transfers/delete/:id</li>
+        <li>GET /api/transfers/getMy</li>
+        <li>GET /api/transfers/get/:id</li>
+      </ul>
+    </section>
+
+    <section id="assignment" class="api-section">
+      <h2>Assignment APIs</h2>
+      <ul class="endpoint-list">
+        <li>POST /api/assign/create</li>
+        <li>DELETE /api/assign/delete/:id</li>
+        <li>GET /api/assign/getMy</li>
+        <li>GET /api/assign/get/:id</li>
+      </ul>
+    </section>
+
+    <section id="expenditure" class="api-section">
+      <h2>Expenditure APIs</h2>
+      <ul class="endpoint-list">
+        <li>POST /api/expend/create</li>
+        <li>POST /api/expend/markAssignedAsExpended/:id</li>
+        <li>DELETE /api/expend/delete/:id</li>
+        <li>GET /api/expend/getMy</li>
+        <li>GET /api/expend/get/:id</li>
+      </ul>
+    </section>
+
+    <section id="movement" class="api-section">
+      <h2>Movement Logs API</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/movement</li>
+      </ul>
+    </section>
+
+    <section id="summary" class="api-section">
+      <h2>Dashboard Summary API</h2>
+      <ul class="endpoint-list">
+        <li>GET /api/summary</li>
+      </ul>
+    </section>
+  </div>
+</body>
+
+</html>
