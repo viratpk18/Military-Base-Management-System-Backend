@@ -39,8 +39,7 @@ const allowedOrigins = [
   "http://localhost:5174",
   "http://localhost:5175",
   "http://localhost:4173",
-  "https://military-base-management-system-frontend.vercel.app",
-  "https://military-base-frontend.vercel.app"
+  "https://military-base-management-system.vercel.app"
 ];
 
 const now = dayjs().format('YYYY-MM-DD HH:mm:ss');
